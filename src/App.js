@@ -11,9 +11,9 @@ import './App.css';
 
 const routesArray = [
   {linkRoute: '/', linkName: 'Homepage'},
-  {linkRoute: '/about', linkName: 'About Page'},
-  {linkRoute: '/contact', linkName: 'Contact Page'},
-  {linkRoute: '/topics', linkName: 'Topics Page'},
+  {linkRoute: '/about', linkName: 'About'},
+  {linkRoute: '/contact', linkName: 'Contact'},
+  {linkRoute: '/topics', linkName: 'Topics'},
 ]
 
 function App() {
