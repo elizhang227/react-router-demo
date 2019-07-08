@@ -1,25 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const MainNav = () => {
+const MainNav = props => {
+    const { routes } = props;
     return (
         <nav>
             <ul>
-                <li>
-                    <Link to='/'>Home</Link>
+                {routes.map(route => (
+                <li key={`link-${route.linkName}`}>
+                    <Link to={route.linkRoute}>{route.linkName}</Link>
                 </li>
-                <li>
-                    <Link to='/about'>About</Link>
-                </li>
-                <li>
-                    <Link to='/contact'>Contact</Link>
-                </li>
-                <li>
-                    <Link to='/topics'>Topics</Link>
-                </li>
+                ))}
             </ul>
         </nav>
     )
 }
 
 export default MainNav
+
+MainNav.propTypes = {
+    routes: PropTypes.array
+}

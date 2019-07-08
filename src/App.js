@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import MainNav from './components/mainNav';
 import HomePage from './components/homePage';
@@ -9,11 +9,18 @@ import Topics from './components/topicsPage';
 
 import './App.css';
 
+const routesArray = [
+  {linkRoute: '/', linkName: 'Homepage'},
+  {linkRoute: '/about', linkName: 'About Page'},
+  {linkRoute: '/contact', linkName: 'Contact Page'},
+  {linkRoute: '/topics', linkName: 'Topics Page'},
+]
+
 function App() {
   return (
     <Router>
       <div className="App">
-        <MainNav />
+        <MainNav routes={routesArray}/>
         <Route 
           path='/' 
           exact 
